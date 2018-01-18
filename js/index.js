@@ -82,7 +82,7 @@ function processCommand() {
 
 		// No match was found...
 		if (!isValid) {
-				terminal.append("OTerm: command not found: " + command + "\n");
+				terminal.append("OpenTerm: command not found: " + command + "\n");
 		}
 
 		// Add to command history and clean up.
