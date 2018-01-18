@@ -14,3 +14,10 @@ The defintion of each command is given as in the above picture.
 * `index.html` and `css/style.css` contains the UI part
 * js/index.js` contains the commands and other features.
 * To add a new command define the command in the commands array and its definition in the function as given in the screenshot.
+
+
+## Commands :
+* help
+* echo
+* fortune
+* clear
