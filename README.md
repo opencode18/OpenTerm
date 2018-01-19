@@ -1,4 +1,7 @@
 # OpenTerm
+
+[![OpenCode](https://img.shields.io/badge/Open-Code-ff6a00.svg?style=flat-square)](https://opencode18.github.io)
+
 OpenTerm is a web based terminal app where you can try different terminal commands
 
 ## How it works?
