@@ -55,19 +55,19 @@ $(document).ready(function() {
 			clear();
 			terminalWindow.css("display", "none");
 			message.css("display","block");
-			handle.css("margin-top", "0%");
+			handle.removeClass("min");
 		});
 
 		maximize.bind("click", function()
 		{
 			terminal.css("display", "block");
-			handle.css("margin-top", "0%");
+			handle.removeClass("min");
 		});
 
 		minimize.bind("click", function()
 		{
 			terminal.css("display", "none");
-			handle.css("margin-top", "45%");
+			handle.addClass("min");
 		});
 
 		button.bind("click", function()
@@ -76,7 +76,7 @@ $(document).ready(function() {
 			terminalWindow.css("display", "block");
 			terminal.css("display", "block");
 			terminal.append("Welcome\n");
-			handle.css("margin-top", "0%");
+			handle.removeClass("min");
 		});
 
 		var commandHistory = [];

@@ -30,10 +30,6 @@ textarea, input, button {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.buttons:hover
-{
-  cursor: pointer;
-}
 
 .window {
   animation: bounceIn 1s ease-in-out;
@@ -119,6 +115,14 @@ textarea, input, button {
 {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.min
+{
+  width: 20%;
+  position: absolute;
+  bottom: 0%;
+  margin-top: 45%;
 }
 
 
