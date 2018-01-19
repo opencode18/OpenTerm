@@ -41,6 +41,44 @@ $(document).ready(function() {
 		var prompt = "➜";
 		var path = "~";
 
+		var close = $(".close");
+		var minimize = $(".minimize");
+		var maximize = $(".maximize");
+		var message = $(".message");
+		var terminalWindow = $(".window");
+		var button = $(".openbtn");
+		var handle = $(".handle");
+
+
+		close.bind("click", function()
+		{
+			clear();
+			terminalWindow.css("display", "none");
+			message.css("display","block");
+			handle.css("margin-top", "0%");
+		});
+
+		maximize.bind("click", function()
+		{
+			terminal.css("display", "block");
+			handle.css("margin-top", "0%");
+		});
+
+		minimize.bind("click", function()
+		{
+			terminal.css("display", "none");
+			handle.css("margin-top", "45%");
+		});
+
+		button.bind("click", function()
+		{
+			message.css("display", "none");
+			terminalWindow.css("display", "block");
+			terminal.css("display", "block");
+			terminal.append("Welcome\n");
+			handle.css("margin-top", "0%");
+		});
+
 		var commandHistory = [];
 		var historyIndex = 0;
 
