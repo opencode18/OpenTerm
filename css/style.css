@@ -1,14 +1,14 @@
 html, body {
   height: 100%;
   overflow: hidden;
-}
+} 
 
 body {
   background: linear-gradient(to bottom right, #ee0979, #ff6a00);
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} 
 
 * {
   box-sizing: border-box;
@@ -30,6 +30,7 @@ textarea, input, button {
   color: rgba(0, 0, 0, 0.5);
 }
 
+
 .window {
   animation: bounceIn 1s ease-in-out;
   width: 1350px;
@@ -41,7 +42,7 @@ textarea, input, button {
   border-bottom: 1px solid #b3b3b3;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 0.7); 
   font-family: Helvetica, sans-serif;
   font-size: 13px;
   line-height: 22px;
@@ -91,6 +92,41 @@ textarea, input, button {
 .path {
   color: #5ed7ff;
 }
+
+.message
+{
+  text-align: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 1);
+  font-size: 30px;
+  display: none;
+}
+
+.openbtn
+{
+  border: none;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(21, 21, 21, 0.5);
+  padding: 10px;
+}
+
+.openbtn:hover
+{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.min
+{
+  width: 10%;
+  position: absolute;
+  bottom: 0%;
+  left: 5%;
+  margin-top: 45%;
+}
+
+
 
 @keyframes blink {
   50% {
