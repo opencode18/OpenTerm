@@ -2,7 +2,7 @@
 OpenTerm is a web based terminal app where you can try different terminal commands
 
 ## How it works?
-OpenTerm has is working purely on js.We have a file `index.js` in js folder which is the backbone of the website.
+OpenTerm is working purely on js.We have a file `index.js` in js folder which is the backbone of the website.
 ![](./screenshots/scr1.png)  
 Here cammands array contains the commands,each element in the array is the commands which can be executed.when a command is used it calls the function associated with it.
 ![](./screenshots/scr2.png)  
