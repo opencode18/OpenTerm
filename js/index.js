@@ -234,7 +234,7 @@ $(document).keypress(function(e) {
 });
 
 // Set the window title
-title.text("OTerm");
+title.text("Open Codde Terminal");
 
 // Get the date for our fake last-login
 var date = new Date().toString(); date = date.substr(0, date.indexOf("GMT") - 1);
