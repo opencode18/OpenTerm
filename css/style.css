@@ -117,13 +117,47 @@ textarea, input, button {
   text-decoration: underline;
 }
 
-.min
+
+
+/*css for dock*/
+.dock 
 {
-  width: 10%;
+  height: 7%;
+  width: 80%;
   position: absolute;
-  bottom: 0%;
-  left: 5%;
-  margin-top: 45%;
+  bottom: 3%;
+  background-color: rgba(21, 21, 21, 0.7);
+}
+
+
+/*css for individual dock item*/
+.dock-item
+{
+  margin-top: 1%;
+  margin-left: 2%;
+  border: 2px solid rgba(21, 21, 21, 0.1);
+}
+
+
+/*css for item on hovering*/
+.dock-item:hover
+{
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+
+/*css for item when selected*/
+.item-selected
+{
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+
+/*css for minimized or closed item*/
+.item-minimized
+{
+  visibility: hidden;
 }
 
 
