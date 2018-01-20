@@ -15,9 +15,12 @@ $(document).ready(function() {
 		}
 
 		function help() {
-				terminal.append("There is no help... MUAHAHAHAHA. >:D\n");
+				terminal.append("Available commands : \n");
+				commands.forEach(function(e) {
+					terminal.append(e.name + '\n');
+				});
 		}
-	
+
 		function echo(args) {
 				var str = args.join(" ");
 				terminal.append(str + "\n");
@@ -98,14 +101,14 @@ $(document).ready(function() {
 						"name": "clear",
 						"function": clear
 				}, {
-						"name": "help",
-						"function": help
+						"name": "echo",
+						"function": echo
 				}, {
 						"name": "fortune",
 						"function": fortune
 				}, {
-						"name": "echo",
-						"function": echo
+						"name": "help",
+						"function": help
 				}];
 
 function processCommand() {
