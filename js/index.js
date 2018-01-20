@@ -51,26 +51,29 @@ $(document).ready(function() {
 		var terminalWindow = $(".window");
 		var button = $(".openbtn");
 		var handle = $(".handle");
+		var dockItem = $(".dock-item")
+		var closeChecker = false;
 
+		dockItem.addClass("item-selected");
 
 		close.bind("click", function()
 		{
 			clear();
-			terminalWindow.css("display", "none");
-			message.css("display","block");
-			handle.removeClass("min");
+			closeChecker = true;
+			terminal.append("Welcome\n");
+			terminalWindow.addClass("item-minimized");
+			dockItem.removeClass("item-selected");
 		});
 
 		maximize.bind("click", function()
 		{
 			terminal.css("display", "block");
-			handle.removeClass("min");
 		});
 
 		minimize.bind("click", function()
 		{
-			terminal.css("display", "none");
-			handle.addClass("min");
+			terminalWindow.addClass("item-minimized");
+			dockItem.addClass("item-selected");
 		});
 
 		button.bind("click", function()
@@ -79,7 +82,15 @@ $(document).ready(function() {
 			terminalWindow.css("display", "block");
 			terminal.css("display", "block");
 			terminal.append("Welcome\n");
-			handle.removeClass("min");
+		});
+
+		dockItem.bind("click", function()
+		{
+			terminalWindow.toggleClass("item-minimized");
+			if(closeChecker)
+				terminalWindow.removeClass("item-closed");
+			dockItem.addClass("item-selected");
+			closeChecker = false;
 		});
 
 		var commandHistory = [];
