@@ -41,6 +41,55 @@ $(document).ready(function() {
 		var prompt = "➜";
 		var path = "~";
 
+		var close = $(".close");
+		var minimize = $(".minimize");
+		var maximize = $(".maximize");
+		var message = $(".message");
+		var terminalWindow = $(".window");
+		var button = $(".openbtn");
+		var handle = $(".handle");
+		var dockItem = $(".dock-item")
+		var closeChecker = false;
+
+		dockItem.addClass("item-selected");
+
+		close.bind("click", function()
+		{
+			clear();
+			closeChecker = true;
+			terminal.append("Welcome\n");
+			terminalWindow.addClass("item-minimized");
+			dockItem.removeClass("item-selected");
+		});
+
+		maximize.bind("click", function()
+		{
+			terminal.css("display", "block");
+		});
+
+		minimize.bind("click", function()
+		{
+			terminalWindow.addClass("item-minimized");
+			dockItem.addClass("item-selected");
+		});
+
+		button.bind("click", function()
+		{
+			message.css("display", "none");
+			terminalWindow.css("display", "block");
+			terminal.css("display", "block");
+			terminal.append("Welcome\n");
+		});
+
+		dockItem.bind("click", function()
+		{
+			terminalWindow.toggleClass("item-minimized");
+			if(closeChecker)
+				terminalWindow.removeClass("item-closed");
+			dockItem.addClass("item-selected");
+			closeChecker = false;
+		});
+
 		var commandHistory = [];
 		var historyIndex = 0;
 
