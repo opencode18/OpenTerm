@@ -1,14 +1,14 @@
 html, body {
   height: 100%;
   overflow: hidden;
-} 
+}
 
 body {
   background: linear-gradient(to bottom right, #ee0979, #ff6a00);
   display: flex;
   justify-content: center;
   align-items: center;
-} 
+}
 
 * {
   box-sizing: border-box;
@@ -42,7 +42,7 @@ textarea, input, button {
   border-bottom: 1px solid #b3b3b3;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  color: rgba(0, 0, 0, 0.7); 
+  color: rgba(0, 0, 0, 0.7);
   font-family: Helvetica, sans-serif;
   font-size: 13px;
   line-height: 22px;
@@ -120,10 +120,11 @@ textarea, input, button {
 
 
 /*css for dock*/
-.dock 
+.dock
 {
   height: 7%;
   width: 80%;
+  min-height: 30px;
   position: absolute;
   bottom: 3%;
   background-color: rgba(21, 21, 21, 0.7);
@@ -133,7 +134,12 @@ textarea, input, button {
 /*css for individual dock item*/
 .dock-item
 {
-  margin-top: 1%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80%;
+  width: 4%;
+  min-width: 25px;
   margin-left: 2%;
   border: 2px solid rgba(21, 21, 21, 0.1);
 }
