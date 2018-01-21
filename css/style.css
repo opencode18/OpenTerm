@@ -64,10 +64,7 @@ textarea, input, button {
 }
 .window .terminal {
   padding: 4px;
-  background-color: black;
-  opacity: 0.7;
   height: 608px;
-  color: white;
   font-family: 'Source Code Pro', monospace;
   font-weight: 200;
   font-size: 16px;
@@ -80,17 +77,30 @@ textarea, input, button {
   border-bottom-right-radius: 5px;
   overflow-y: auto;
 }
+
+.terminal-black
+{
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.terminal-white
+{
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+
 .window .terminal::after {
   content: "|";
   animation: blink 2s steps(1) infinite;
 }
 
 .prompt {
-  color: #bde371;
+  color: red;
 }
 
 .path {
-  color: #5ed7ff;
+  color: red;
 }
 
 .message
@@ -165,6 +175,58 @@ textarea, input, button {
 {
   visibility: hidden;
 }
+
+/* 
+.side-dock
+{
+  height: 80%;
+  width: 2%;
+  min-height: 30px;
+  position: absolute;
+  top: 3%;
+  left: 0%;
+  background-color: rgba(21, 21, 21, 0.7);
+}
+
+.side-dock-item
+{
+  padding: 25%;
+  /* margin: 10%; */
+ 
+/* .side-dock
+{
+  height: 7%;
+  width: 80%;
+  min-height: 30px;
+  position: absolute;
+  bottom: 3%;
+  background-color: rgba(21, 21, 21, 0.7);
+} */
+
+.theme-block{
+	width: 2%;
+  height: 4%;
+  border: 5px solid rgba(21, 21, 21, 0.7);
+  position: absolute;
+  left: 1%;
+}
+ 
+.black{
+  top: 4%;
+  background: rgba(0, 0, 0, 0.7);
+}
+.white{
+  top:  9%;
+	background: rgba(255, 255, 255, 0.7);
+}
+
+.theme-selected
+{
+  border: 5px solid rgba(255, 255, 255, 1);
+}
+
+
+
 
 
 

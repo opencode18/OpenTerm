@@ -53,6 +53,8 @@ $(document).ready(function() {
 		var handle = $(".handle");
 		var dockItem = $(".dock-item")
 		var closeChecker = false;
+		var black = $(".black");
+		var white = $(".white");
 
 		dockItem.addClass("item-selected");
 
@@ -83,6 +85,23 @@ $(document).ready(function() {
 			terminal.css("display", "block");
 			terminal.append("Welcome\n");
 		});
+
+		black.bind("click",function()
+		{
+			terminal.addClass("terminal-black");
+			terminal.removeClass("terminal-white");
+			black.addClass("theme-selected");
+			white.removeClass("theme-selected");
+		});
+
+		white.bind("click",function()
+		{
+			terminal.removeClass("terminal-black");
+			terminal.addClass("terminal-white");
+			white.addClass("theme-selected");
+			black.removeClass("theme-selected");
+		});
+
 
 		dockItem.bind("click", function()
 		{
