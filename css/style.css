@@ -29,12 +29,60 @@ textarea, input, button {
   border-radius: 6px;
   color: rgba(0, 0, 0, 0.5);
 }
-
-
-.window {
-  animation: bounceIn 1s ease-in-out;
-  width: 1350px;
+/* For home buttons */
+.window-button, .window-home .buttons-home .close-home, .window-home .buttons-home .minimize-home, .window-home .buttons-home .maximize-home {
+  padding: 0;
+  margin: 0;
+  margin-right: 4px;
+  width: 12px;
+  height: 12px;
+  background-color: gainsboro;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  color: rgba(0, 0, 0, 0.5);
 }
+
+/* For about buttons */
+.window-about, .window-about .buttons-about .close-about, .window-about .buttons-about .minimize-about, .window-about .buttons-about .maximize-about {
+  padding: 0;
+  margin: 0;
+  margin-right: 4px;
+  width: 12px;
+  height: 12px;
+  background-color: gainsboro;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.window {
+  position: absolute;
+  top: 18%;
+  left: 15%;
+  animation: bounceIn 1s ease-in-out;
+  width: 70%;
+  box-shadow: 5px 5px 10px rgba(23,23,23,0.5);
+}
+
+/* Window home */
+.window-home {
+  position: absolute;
+  top: 18%;
+  left: 15%;
+  animation: bounceIn 1s ease-in-out;
+  width: 70%;
+  box-shadow: 5px 5px 10px rgba(23,23,23,0.5);
+}
+
+/* Window about */
+.window-about {
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  animation: bounceIn 1s ease-in-out;
+  width: 50%;
+  /* box-shadow: 5px 5px 10px rgba(23,23,23,0.5); */
+}
+
 .window .handle {
   height: 22px;
   background: linear-gradient(0deg, #d8d8d8, #ececec);
@@ -48,6 +96,37 @@ textarea, input, button {
   line-height: 22px;
   text-align: center;
 }
+
+/* Home .handle-home */
+.window-home .handle-home {
+  height: 22px;
+  background: linear-gradient(0deg, #151515, #232323);
+  border-top: 1px solid #232323;
+  border-bottom: 1px solid #151515;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 22px;
+  text-align: center;
+}
+
+/* Home .handle-about */
+.window-about .handle-about {
+  height: 22px;
+  background: linear-gradient(0deg, #151515, #232323);
+  border-top: 1px solid #232323;
+  border-bottom: 1px solid #151515;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 22px;
+  text-align: center;
+  box-shadow: 5px 5px 10px rgba(23,23,23,0.5);
+}
 .window .buttons {
   position: absolute;
   float: left;
@@ -60,6 +139,39 @@ textarea, input, button {
   background-color: #ffbf2f;
 }
 .window .buttons .maximize {
+  background-color: #25cc3e;
+}
+
+/* Home buttons deco */
+.window-home .buttons-home {
+  position: absolute;
+  float: left;
+  margin: 0 8px;
+}
+.window-home .buttons-home .close-home {
+  background-color: #ff6159;
+}
+.window-home .buttons-home .minimize-home {
+  background-color: #ffbf2f;
+}
+.window-home .buttons-home .maximize-home {
+  background-color: #25cc3e;
+}
+
+
+/* About buttons deco */
+.window-about .buttons-about {
+  position: absolute;
+  float: left;
+  margin: 0 8px;
+}
+.window-about .buttons-about .close-about {
+  background-color: #ff6159;
+}
+.window-about .buttons-about .minimize-about {
+  background-color: #ffbf2f;
+}
+.window-about .buttons-about .maximize-about {
   background-color: #25cc3e;
 }
 .window .terminal {
@@ -79,6 +191,67 @@ textarea, input, button {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   overflow-y: auto;
+}
+
+/* For home window */
+.window-home .home {
+  background-color: white;
+  height: 608px;
+  color: white;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 200;
+  font-size: 16px;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  /* overflow-y: auto; */
+}
+
+/* For about window */
+.window-about .about {
+  background-color: #e2d6d6;
+  height: 608px;
+  color: black;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 200;
+  font-size: 16px;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(23,23,23,0.5);
+  /* overflow-y: auto; */
+}
+
+/* css for home tab */
+.home>.home-tab{
+  position: relative;
+  top: -5.9%;
+  height: 100%;
+  width: 15%;
+  background-color: #232323;
+}
+/* css for about page */
+.about>.about-page{
+  position: relative;
+  top: -2%;
+  height: 90%;
+  width: 70%;
+  left: 15%;
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 5px 5px 20px rgba(23,23,23,0.5);
+  text-align: center;
+  color: #151515;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 15px;
 }
 .window .terminal::after {
   content: "|";
@@ -144,7 +317,41 @@ textarea, input, button {
   border: 2px solid rgba(21, 21, 21, 0.1);
 }
 
+/* for dock home */
+.dock-home
+{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80%;
+  width: 4%;
+  min-width: 25px;
+  margin-left: 2%;
+  border: 2px solid rgba(21, 21, 21, 0.1);
+}
 
+/* css for about.txt */
+.home-about
+{
+  position: absolute;
+  top: 6%;
+  left: 17.9%;
+  height: 50px;
+  width: 50px;
+  min-width: 25px;
+}
+
+.about-name{
+  position: absolute;
+  color:black;
+  top: 12%;
+  left: 17.5%;
+  font-family: Helvetica, sans-serif;
+}
+.home-about:hover{
+  border: 1px solid rgba(23, 23, 23, 0.3);
+  cursor: pointer;
+}
 /*css for item on hovering*/
 .dock-item:hover
 {
@@ -152,7 +359,12 @@ textarea, input, button {
   cursor: pointer;
 }
 
-
+/* for home icon hovering */
+.dock-home:hover
+{
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
 /*css for item when selected*/
 .item-selected
 {

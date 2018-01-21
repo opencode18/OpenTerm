@@ -54,20 +54,67 @@ $(document).ready(function() {
 		var dockItem = $(".dock-item")
 		var closeChecker = false;
 
-		dockItem.addClass("item-selected");
+		// Declaring home variables
+		var home = $(".home")
+		var closeHome = $(".close-home");
+		var minimizeHome = $(".minimize-home");
+		var maximizeHome = $(".maximize-home");
+		var homeWindow = $(".window-home");
+		var handleHome = $(".handle-home");
+		var dockHome = $(".dock-home");
+		var titleHome = $(".title-home");
+		var closeCheckerHome = true;
+
+		// Declaring about variable
+		var about = $(".about")
+		var closeAbout = $(".close-about");
+		var minimizeAbout = $(".minimize-about");
+		var maximizeAbout = $(".maximize-about");
+		var aboutWindow = $(".window-about");
+		var handleAbout = $(".handle-about");
+		var homeAbout = $(".home-about");
+		var titleAbout = $(".title-about");
+		var closeCheckerAbout = true;
+		// dockItem.addClass("item-selected");
 
 		close.bind("click", function()
 		{
 			clear();
 			closeChecker = true;
-			terminal.append("Welcome\n");
+			terminal.append("Welcome\n"+prompt+path);
 			terminalWindow.addClass("item-minimized");
 			dockItem.removeClass("item-selected");
+		});
+
+		closeHome.bind("click", function()
+		{
+			clear();
+			closeCheckerHome = true;
+			homeWindow.addClass("item-minimized");
+			dockHome.removeClass("item-selected");
+		});
+
+		closeAbout.bind("click", function()
+		{
+			clear();
+			closeCheckerAbout = true;
+			aboutWindow.addClass("item-minimized");
+			homeAbout.removeClass("item-selected");
 		});
 
 		maximize.bind("click", function()
 		{
 			terminal.css("display", "block");
+		});
+
+		maximizeHome.bind("click", function()
+		{
+			home.css("display", "block");
+		});
+
+		maximizeAbout.bind("click", function()
+		{
+			about.css("display", "block");
 		});
 
 		minimize.bind("click", function()
@@ -76,12 +123,24 @@ $(document).ready(function() {
 			dockItem.addClass("item-selected");
 		});
 
+		minimizeHome.bind("click", function()
+		{
+			homeWindow.addClass("item-minimized");
+			dockHome.addClass("item-selected");
+		});
+
+		minimizeAbout.bind("click", function()
+		{
+			aboutWindow.addClass("item-minimized");
+			homeAbout.addClass("item-selected");
+		});
+
 		button.bind("click", function()
 		{
 			message.css("display", "none");
 			terminalWindow.css("display", "block");
 			terminal.css("display", "block");
-			terminal.append("Welcome\n");
+			terminal.append("Welcome\n"+prompt+path);
 		});
 
 		dockItem.bind("click", function()
@@ -91,6 +150,24 @@ $(document).ready(function() {
 				terminalWindow.removeClass("item-closed");
 			dockItem.addClass("item-selected");
 			closeChecker = false;
+		});
+
+		dockHome.bind("click", function()
+		{
+			homeWindow.toggleClass("item-minimized");
+			if(closeCheckerHome)
+				homeWindow.removeClass("item-closed");
+			dockHome.addClass("item-selected");
+			closeCheckerHome = false;
+		});
+
+		homeAbout.bind("click", function()
+		{
+			aboutWindow.toggleClass("item-minimized");
+			if(closeCheckerAbout)
+				aboutWindow.removeClass("item-closed");
+			homeAbout.addClass("item-selected");
+			closeCheckerAbout = false;
 		});
 
 		var commandHistory = [];
@@ -235,6 +312,7 @@ $(document).keypress(function(e) {
 
 // Set the window title
 title.text("Open Code Terminal");
+titleHome.text("Home");
 
 // Get the date for our fake last-login
 var date = new Date().toString(); date = date.substr(0, date.indexOf("GMT") - 1);
