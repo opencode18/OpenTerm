@@ -28,12 +28,15 @@ textarea, input, button {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
 }
 
 
 .window {
   animation: bounceIn 1s ease-in-out;
   width: 1350px;
+  overflow: auto;
+  resize: both;
 }
 .window .handle {
   height: 22px;
@@ -47,20 +50,25 @@ textarea, input, button {
   font-size: 13px;
   line-height: 22px;
   text-align: center;
+
 }
 .window .buttons {
   position: absolute;
   float: left;
   margin: 0 8px;
+  overflow: auto;
 }
 .window .buttons .close {
   background-color: #ff6159;
+  overflow: auto;
 }
 .window .buttons .minimize {
   background-color: #ffbf2f;
+  overflow: auto;
 }
 .window .buttons .maximize {
   background-color: #25cc3e;
+  overflow: auto;
 }
 .window .terminal {
   padding: 4px;
@@ -76,6 +84,7 @@ textarea, input, button {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   overflow-y: auto;
+  overflow: auto;
 }
 
 .terminal-black
@@ -88,6 +97,12 @@ textarea, input, button {
 {
   background-color: rgba(255, 255, 255, 0.9);
   color: black;
+}
+
+.terminal-green
+{
+  background-color: rgba(77, 94, 32, 0.9);
+  color: white;
 }
 
 .window .terminal::after {
@@ -138,6 +153,8 @@ textarea, input, button {
   position: absolute;
   bottom: 3%;
   background-color: rgba(21, 21, 21, 0.7);
+  resize: horizontal;
+  overflow: auto;
 }
 
 
@@ -176,48 +193,32 @@ textarea, input, button {
   visibility: hidden;
 }
 
-/* 
-.side-dock
-{
-  height: 80%;
-  width: 2%;
-  min-height: 30px;
-  position: absolute;
-  top: 3%;
-  left: 0%;
-  background-color: rgba(21, 21, 21, 0.7);
-}
-
-.side-dock-item
-{
-  padding: 25%;
-  /* margin: 10%; */
- 
-/* .side-dock
-{
-  height: 7%;
-  width: 80%;
-  min-height: 30px;
-  position: absolute;
-  bottom: 3%;
-  background-color: rgba(21, 21, 21, 0.7);
-} */
 
 .theme-block{
 	width: 2%;
   height: 4%;
   border: 5px solid rgba(21, 21, 21, 0.7);
   position: absolute;
-  left: 1%;
+  right: 10%;
+}
+
+.theme-block:hover
+{
+  cursor: pointer;
 }
  
 .black{
-  top: 4%;
+  top: 35%;
   background: rgba(0, 0, 0, 0.7);
 }
 .white{
-  top:  9%;
+  top:  40%;
 	background: rgba(255, 255, 255, 0.7);
+}
+.green
+{
+  top: 45%;
+  background-color: rgba(77, 94, 32, 0.9);
 }
 
 .theme-selected
@@ -225,6 +226,10 @@ textarea, input, button {
   border: 5px solid rgba(255, 255, 255, 1);
 }
 
+.theme-visibility
+{
+  display: none;
+}
 
 
 
