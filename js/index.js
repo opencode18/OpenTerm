@@ -44,17 +44,32 @@ $(document).ready(function() {
 		var prompt = "➜";
 		var path = "~";
 
-		var close = $(".close");
+		var close = $(".close-btn");
 		var minimize = $(".minimize");
 		var maximize = $(".maximize");
 		var message = $(".message");
 		var terminalWindow = $(".window");
-		var button = $(".openbtn");
 		var handle = $(".handle");
 		var dockItem = $(".dock-item")
 		var closeChecker = false;
+		var black = $(".black");
+		var white = $(".white");
+		var green = $(".green");
+		var themeBlock = $(".block-container");
+		var holder = $(".holder");
+		var colorBlock = $(".color-block");
 
+		
 		dockItem.addClass("item-selected");
+
+		$("body").click(function(e) {
+			if ($(e.target).attr('class') == 'holder block') {
+				return;
+			} else {
+				colorBlock.addClass("block-display");
+			}
+		});
+
 
 		close.bind("click", function()
 		{
@@ -63,6 +78,7 @@ $(document).ready(function() {
 			terminal.append("Welcome\n");
 			terminalWindow.addClass("item-minimized");
 			dockItem.removeClass("item-selected");
+			themeBlock.toggleClass("theme-visibility");
 		});
 
 		maximize.bind("click", function()
@@ -74,24 +90,58 @@ $(document).ready(function() {
 		{
 			terminalWindow.addClass("item-minimized");
 			dockItem.addClass("item-selected");
+			themeBlock.toggleClass("theme-visibility");
 		});
 
-		button.bind("click", function()
+
+		black.bind("click",function()
 		{
-			message.css("display", "none");
-			terminalWindow.css("display", "block");
-			terminal.css("display", "block");
-			terminal.append("Welcome\n");
+			terminal.addClass("terminal-black");
+			terminal.removeClass("terminal-white");
+			terminal.removeClass("terminal-green");
+			black.addClass("theme-selected");
+			white.removeClass("theme-selected");
+			green.removeClass("theme-selected")
 		});
+
+		white.bind("click",function()
+		{
+			terminal.removeClass("terminal-black");
+			terminal.addClass("terminal-white");
+			terminal.removeClass("terminal-green");
+			white.addClass("theme-selected");
+			black.removeClass("theme-selected");
+			green.removeClass("theme-selected")
+		});
+
+		green.bind("click",function()
+		{
+			terminal.removeClass("terminal-black");
+			terminal.removeClass("terminal-white");
+			terminal.addClass("terminal-green");
+			white.removeClass("theme-selected");
+			black.removeClass("theme-selected");
+			green.addClass("theme-selected")
+		});
+
 
 		dockItem.bind("click", function()
 		{
 			terminalWindow.toggleClass("item-minimized");
 			if(closeChecker)
+			{
 				terminalWindow.removeClass("item-closed");
+				displayPrompt();
+			}
 			dockItem.addClass("item-selected");
+			themeBlock.toggleClass("theme-visibility");
 			closeChecker = false;
 		});
+
+		holder.bind("click", function(){
+			colorBlock.toggleClass("block-display");
+		});
+
 
 		var commandHistory = [];
 		var historyIndex = 0;
