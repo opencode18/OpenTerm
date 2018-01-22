@@ -36,7 +36,6 @@ textarea, input, button {
   animation: bounceIn 1s ease-in-out;
   width: 1350px;
   overflow: auto;
-  resize: both;
 }
 .window .handle {
   height: 22px;
@@ -84,7 +83,7 @@ textarea, input, button {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   overflow-y: auto;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .terminal-black
@@ -153,7 +152,6 @@ textarea, input, button {
   position: absolute;
   bottom: 3%;
   background-color: rgba(21, 21, 21, 0.7);
-  resize: horizontal;
   overflow: auto;
 }
 
