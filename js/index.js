@@ -62,6 +62,14 @@ $(document).ready(function() {
 		
 		dockItem.addClass("item-selected");
 
+		$("body").click(function(e) {
+			if ($(e.target).attr('class') == 'holder block') {
+				return;
+			} else {
+				colorBlock.addClass("block-display");
+			}
+		});
+
 
 		close.bind("click", function()
 		{
