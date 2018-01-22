@@ -18,7 +18,7 @@ textarea, input, button {
   outline: none;
 }
 
-.window-button, .window .buttons .close, .window .buttons .minimize, .window .buttons .maximize {
+.window-button, .window .buttons .close-btn, .window .buttons .minimize, .window .buttons .maximize {
   padding: 0;
   margin: 0;
   margin-right: 4px;
@@ -57,7 +57,7 @@ textarea, input, button {
   margin: 0 8px;
   overflow: auto;
 }
-.window .buttons .close {
+.window .buttons .close-btn {
   background-color: #ff6159;
   overflow: auto;
 }
@@ -191,43 +191,54 @@ textarea, input, button {
   visibility: hidden;
 }
 
-
-.theme-block{
-	width: 2%;
-  height: 4%;
-  border: 5px solid rgba(21, 21, 21, 0.7);
-  position: absolute;
-  right: 10%;
-}
-
-.theme-block:hover
+.block-container
 {
+  position: absolute;
+  right: 2%;
+  top: -1%;
+}
+.holder.block
+{
+	background-color: rgb(80, 79, 79);
+  color: white;
+	border: 5px solid rgb(42, 42, 42);
+	text-align: center;
+	text-transform: capitalize;
+  padding: 5px;
   cursor: pointer;
 }
- 
-.black{
-  top: 35%;
-  background: rgba(0, 0, 0, 0.7);
-}
-.white{
-  top:  40%;
-	background: rgba(255, 255, 255, 0.7);
-}
-.green
+ul
 {
-  top: 45%;
-  background-color: rgba(77, 94, 32, 0.9);
+  list-style: none;
+}
+
+.block
+{
+  background-color: rgba(21, 21, 21, 0.9);
+  width: 100%;
+  color: white;
+	text-align: center;
+	text-transform: capitalize;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.block-display
+{
+  display: none;
 }
 
 .theme-selected
 {
-  border: 5px solid rgba(255, 255, 255, 1);
+  border: 2px solid white;
 }
+
 
 .theme-visibility
 {
   display: none;
-}
+} 
+
 
 
 
@@ -249,3 +260,9 @@ textarea, input, button {
     transform: translateY(0px);
   }
 }
+
+
+
+
+
+

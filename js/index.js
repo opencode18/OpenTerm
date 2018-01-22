@@ -44,7 +44,7 @@ $(document).ready(function() {
 		var prompt = "➜";
 		var path = "~";
 
-		var close = $(".close");
+		var close = $(".close-btn");
 		var minimize = $(".minimize");
 		var maximize = $(".maximize");
 		var message = $(".message");
@@ -55,9 +55,13 @@ $(document).ready(function() {
 		var black = $(".black");
 		var white = $(".white");
 		var green = $(".green");
-		var themeBlock = $(".theme-block")
+		var themeBlock = $(".block-container");
+		var holder = $(".holder");
+		var colorBlock = $(".color-block");
 
+		
 		dockItem.addClass("item-selected");
+
 
 		close.bind("click", function()
 		{
@@ -125,6 +129,11 @@ $(document).ready(function() {
 			themeBlock.toggleClass("theme-visibility");
 			closeChecker = false;
 		});
+
+		holder.bind("click", function(){
+			colorBlock.toggleClass("block-display");
+		});
+
 
 		var commandHistory = [];
 		var historyIndex = 0;
