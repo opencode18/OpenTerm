@@ -37,6 +37,7 @@ $(document).ready(function() {
 						terminal.append(fortune + "\n");
 				}
 		}
+
 		// END COMMANDS
 
 		var title = $(".title");
