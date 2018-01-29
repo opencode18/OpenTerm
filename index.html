@@ -7,22 +7,22 @@
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-  
-      <link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="css/style.css">
 
   
-</head>
+</head>                  
 
 <body>
 
-<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:200' rel='stylesheet' type='text/css'>
-
 <!-- Terminal -->
 <div class="container">
+  <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:200' rel='stylesheet' type='text/css'>
+<div class="term-container">
 		<div class="window">
 				<div class="handle">
 						<div class="buttons">
-								<button class="close">
+								<button class="close-btn">
 								</button>
 								<button class="minimize">
 								</button>
@@ -31,11 +31,12 @@
 						</div>
 						<span class="title"></span>
 				</div>
-				<div class="terminal"></div>
+				<div class="terminal terminal-black"></div>
 		</div>
 		<div class="message">
 			<p>The Terminal is closed</p><span><button class="openbtn">Open Terminal</button></span>
 		</div>
+
 </div>
 
 <!-- Home -->
@@ -96,10 +97,27 @@
 	<span><img src="icons/terminal.png" alt="Smiley face" height="42" width="42" class="dock-item"></span>
 	<span><img src="icons/home.svg" alt="Smiley face" height="42" width="42" class="dock-home"></span>	
 </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-  
 
+
+
+	<div class="block-container">
+		<ul>
+		<li class="holder block">THEMES</li>
+		<div class="color-block block-display">
+		<li class="block black theme-selected">BLACK</li>
+		<li class="block white">WHITE</li>
+		<li class="block green">GREEN</li>
+		</div>
+		</ul>
+		<ul>
+
+		</ul>
+	</div>
+
+
+
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script  src="js/index.js"></script>
 
 
